@@ -1,0 +1,30 @@
+class Solution:
+    def sortedSquares(self, nums: list[int]) -> list[int]:
+        negative = []
+        positive = []
+        output = []
+        for n in nums:
+            if n < 0:
+                negative.append(n * n)
+            else: 
+                positive.append(n * n)
+        negative = negative[::-1]
+        i = 0
+        j = 0
+
+        while i < len(negative) and j < len(positive):
+            print(i, j)
+            if negative[i] < positive[j]:
+                output.append(negative[i])
+                print("is being swapped", negative[i])
+                i += 1
+            else:
+                output.append(positive[j])
+                j += 1
+        while i < len(negative):
+            output.append(negative[i])
+            i += 1
+        while j < len(positive):
+            output.append(positive[j])
+            j += 1
+        return output
