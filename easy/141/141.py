@@ -16,3 +16,5 @@ class Solution:
             pos += 1
             current = current.next
         return False
+# Time complexity O(n)
+# Space complexity O(1)

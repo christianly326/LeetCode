@@ -12,4 +12,4 @@ class Solution:
             else:
                 current = current.next
         return head
-            
+# Time complexity O(n)
